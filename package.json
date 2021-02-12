@@ -1,7 +1,7 @@
 {
-  "name": "accessible-web",
+  "name": "clementdeguelle_6_13022021",
   "version": "1.0.0",
-  "description": "FishEye",
+  "description": "Projet n°6 Openclassrooms FishEye",
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch ./sass/main.scss:./public/css/style.css",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/cdeguelle/ClementDeguelle_6_13022021"
+    "url": "git+https://github.com/cdeguelle/ClementDeguelle_6_13022021.git"
   },
   "author": "cdeguelle",
   "license": "ISC",
@@ -17,8 +17,5 @@
   "bugs": {
     "url": "https://github.com/cdeguelle/ClementDeguelle_6_13022021/issues"
   },
-  "homepage": "https://github.com/cdeguelle/ClementDeguelle_6_13022021#readme",
-  "dependencies": {
-    
-  }
+  "homepage": "https://github.com/cdeguelle/ClementDeguelle_6_13022021#readme"
 }

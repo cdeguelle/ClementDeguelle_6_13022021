@@ -1,17 +1,47 @@
-/* Error: Can't find stylesheet to import.
- *    ,
- * 19 | @import "./pages/photographer";
- *    |         ^^^^^^^^^^^^^^^^^^^^^^
- *    '
- *   sass\main.scss 19:9  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Can't find stylesheet to import.\a    \2577 \a 19 \2502  @import \"./pages/photographer\";\a    \2502          ^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   sass\\main.scss 19:9  root stylesheet";
+@font-face {
+  font-family: "DM Sans";
+  font-style: normal;
+  font-weight: 400;
+  src: url("./../../fonts/DM Sans/dm-sans-v6-latin-regular.eot");
+  src: local(""), url("./../../fonts/DM Sans/dm-sans-v6-latin-regular.eot?#iefix") format("embedded-opentype"), url("./../../fonts/DM Sans/dm-sans-v6-latin-regular.woff2") format("woff2"), url("./../../fonts/DM Sans/dm-sans-v6-latin-regular.woff") format("woff"), url("./../../fonts/DM Sans/dm-sans-v6-latin-regular.ttf") format("truetype"), url("./../../fonts/DM Sans/dm-sans-v6-latin-regular.svg#DMSans") format("svg");
 }
+header {
+  display: flex;
+  margin: 45px 0 0 100px;
+}
+
+.fisheye-logo {
+  margin: 0 88px 0 0;
+}
+
+.letter-logo__y {
+  position: relative;
+  top: 10px;
+  right: 2px;
+}
+.letter-logo__e {
+  position: relative;
+  right: 7px;
+}
+
+.tags {
+  font-family: "DM Sans", sans-serif;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+.tags__name {
+  border: 0.5px solid #C4C4C4;
+  box-sizing: border-box;
+  border-radius: 11px;
+  padding: 0 5px;
+  margin: 0 5px;
+  font-size: 0.75em;
+  color: #901C1C;
+  cursor: pointer;
+}
+.tags__name:hover {
+  scale: 1.2;
+}
+
+/*# sourceMappingURL=style.css.map */
