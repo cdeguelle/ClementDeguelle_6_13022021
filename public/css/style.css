@@ -1,9 +1,17 @@
-@font-face {
-  font-family: "DM Sans";
-  font-style: normal;
-  font-weight: 400;
-  src: url("./../../fonts/dm-sans-v6-latin-regular.eot");
-  src: local(""), url("./../../fonts/dm-sans-v6-latin-regular.eot?#iefix") format("embedded-opentype"), url("./../../fonts/dm-sans-v6-latin-regular.woff2") format("woff2"), url("./../../fonts/dm-sans-v6-latin-regular.woff") format("woff"), url("./../../fonts/dm-sans-v6-latin-regular.ttf") format("truetype"), url("./../../fonts/dm-sans-v6-latin-regular.svg#DMSans") format("svg");
-}
+/* Error: Can't find stylesheet to import.
+ *    ,
+ * 19 | @import "./pages/photographer";
+ *    |         ^^^^^^^^^^^^^^^^^^^^^^
+ *    '
+ *   sass\main.scss 19:9  root stylesheet */
 
-/*# sourceMappingURL=style.css.map */
+body::before {
+  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
+      "Droid Sans Mono", monospace, monospace;
+  white-space: pre;
+  display: block;
+  padding: 1em;
+  margin-bottom: 1em;
+  border-bottom: 2px solid black;
+  content: "Error: Can't find stylesheet to import.\a    \2577 \a 19 \2502  @import \"./pages/photographer\";\a    \2502          ^^^^^^^^^^^^^^^^^^^^^^\a    \2575 \a   sass\\main.scss 19:9  root stylesheet";
+}
