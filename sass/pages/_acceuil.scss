@@ -1,43 +1,79 @@
-header {
-    display: flex;
-    margin: 45px 0 0 100px;
+* {
+    font-family: 'DM sans';
 }
 
-.fisheye-logo {
-    margin: 0 88px 0 0;
-}
-
-.letter-logo {
-    &__y {
-        position: relative;
-        top: 10px;
-        right: 2px;
-    }
-    &__e {
-        position: relative;
-        right: 7px;
+.title {
+    font-size: 2.25em;
+    color: #901C1C;
+    position: absolute;
+    top: 44px;
+    left: 1017px;
+    margin: 0 0 0 76px;
+    font-weight: 400;
+    @include smartphone {
+        left: 154px;
+        font-size: 0.9em;
+        top: 52px;
     }
 }
 
-.tags {
-    font-family: 'DM Sans', sans-serif;
-    list-style: none;
+.photographers-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 80px;
+    @include smartphone {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+}
+
+.photographer {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+    &__link {
+        text-decoration: none;
+        text-align: center;
+    }
+    &__picture {
+        object-fit: cover;
+        width: 263px;
+        height: 277px;
+        border-radius: 50%;
+    }
     &__name {
-        border: 0.5px solid #C4C4C4;
-        box-sizing: border-box;
-        border-radius: 11px;
-        padding: 0 5px;
-        margin: 0 5px;
-        font-size: 0.75em;
+        margin: 15px 0 0 0;
+        font-size: 2.25em;
+        color: #D3573C;
+        font-weight: 400;
+    }
+    &__city {
+        font-size: 0.8em;
+        font-weight: 400;
         color: #901C1C;
-        cursor: pointer;
-        &:hover {
-            scale: 1.2;
-        }
+        margin: 0;
+    }
+    &__description {
+        font-size: 0.6em;
+        font-weight: 400;
+        margin: 0;
+    }
+    &__price {
+        font-size: 0.5em;
+        font-weight: 400;
+        margin: 0;
+        color: #757575;
+    }
+    &__tags {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
     }
 }
+
+
 
 
 

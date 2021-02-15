@@ -1,0 +1,69 @@
+.photographer-card {
+    margin: 50px 100px 0 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FAFAFA;
+    padding: 50px; 
+}
+
+.photographer {
+    &__name {
+        &--profile {
+            font-size: 4em;
+        }
+    }
+    &__city {
+        &--profile {
+            font-size: 1.5em;
+        }
+    }
+    &__description {
+        &--profile {
+            font-size: 1.1em;
+            color: #525252;
+            margin: 0;
+        }
+    }
+}
+
+.contact {
+    align-self: flex-start;
+    margin-top: 35px;
+    margin-right: 340px;
+}
+
+.filter {
+    margin: 50px 100px;
+    & a {
+        text-decoration: none;
+        color: #000000;
+    }
+}
+
+.dropdown {
+    background-color: #901C1C;
+    border-radius: 4px;
+    display: none;
+    padding: 0 10px;
+    position: absolute;
+    left: 200px;
+    top: 550px;
+    z-index: 10;
+    & li {
+        list-style: none;
+        border-bottom: 1px solid white;
+        padding: 15px 0;
+        width: 165px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        & a {
+            text-decoration: none;
+            color: #ffffff;
+        }
+    }
+    &__last-link {
+        border-bottom: none !important;
+    }
+}
