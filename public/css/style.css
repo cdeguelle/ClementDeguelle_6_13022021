@@ -13,6 +13,14 @@
   font-size: 1.1em;
   font-weight: 700;
 }
+.contact:hover {
+  background-color: #DB8876;
+  color: #000000;
+}
+.contact:focus {
+  background-color: #DB8876;
+  color: #000000;
+}
 
 header {
   display: flex;
@@ -21,7 +29,7 @@ header {
 @media screen and (max-width: 640px) {
   header {
     flex-wrap: wrap;
-    margin: 45px 0;
+    margin: 30px 0;
   }
 }
 
@@ -30,7 +38,7 @@ header {
 }
 @media screen and (max-width: 640px) {
   .fisheye-logo {
-    margin: 0 0 0 20px;
+    margin: 0 0 0 10px;
   }
 }
 
@@ -42,6 +50,10 @@ header {
 .letter-logo__e {
   position: relative;
   right: 7px;
+}
+.letter-logo__i {
+  position: relative;
+  top: 2px;
 }
 @media screen and (max-width: 640px) {
   .letter-logo__f {
@@ -87,12 +99,16 @@ header {
   border-radius: 11px;
   padding: 0 5px;
   margin: 0 5px 0 0;
-  font-size: 0.75em;
+  font-size: 0.8em;
   color: #901C1C;
   font-weight: 500;
   cursor: pointer;
 }
 .tags__name:hover {
+  background-color: #901C1C;
+  color: #ffffff;
+}
+.tags__name:focus {
   background-color: #901C1C;
   color: #ffffff;
 }
@@ -105,6 +121,7 @@ header {
   }
   .tags__name {
     margin: 0 2px 5px 0;
+    font-size: 0.7em;
   }
 }
 
@@ -125,7 +142,7 @@ header {
   .title {
     left: 154px;
     font-size: 0.9em;
-    top: 52px;
+    top: 40px;
   }
 }
 
@@ -195,23 +212,68 @@ header {
   background-color: #FAFAFA;
   padding: 50px;
 }
+@media screen and (max-width: 640px) {
+  .photographer-card {
+    margin: 0 10px;
+    flex-direction: column;
+    padding: 0;
+    background-color: #ffffff;
+    align-items: flex-start;
+  }
+}
 
 .photographer__name--profile {
   font-size: 4em;
 }
+@media screen and (max-width: 640px) {
+  .photographer__name--profile {
+    font-size: 2.2em;
+    margin-top: 0;
+  }
+}
 .photographer__city--profile {
   font-size: 1.5em;
+}
+@media screen and (max-width: 640px) {
+  .photographer__city--profile {
+    font-size: 0.8em;
+  }
 }
 .photographer__description--profile {
   font-size: 1.1em;
   color: #525252;
   margin: 0;
 }
+@media screen and (max-width: 640px) {
+  .photographer__description--profile {
+    font-size: 0.8em;
+  }
+}
+@media screen and (max-width: 640px) {
+  .photographer__picture--profile {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 100px;
+    right: 20px;
+    box-shadow: 0px 4px 12px 0px #000000 25%;
+  }
+}
 
 .contact {
   align-self: flex-start;
-  margin-top: 35px;
+  margin-top: 60px;
   margin-right: 340px;
+}
+@media screen and (max-width: 640px) {
+  .contact {
+    position: fixed;
+    bottom: 30px;
+    left: 99px;
+    margin: 0;
+    padding: 5px 20px;
+    font-size: 1.2em;
+  }
 }
 
 .filter {
@@ -220,6 +282,13 @@ header {
 .filter a {
   text-decoration: none;
   color: #000000;
+}
+@media screen and (max-width: 640px) {
+  .filter {
+    z-index: -1;
+    opacity: 0;
+    position: absolute;
+  }
 }
 
 .dropdown {
@@ -247,6 +316,65 @@ header {
 }
 .dropdown__last-link {
   border-bottom: none !important;
+}
+
+.photo-grid {
+  display: flex;
+  margin-left: 100px;
+  margin-right: 100px;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.photo-grid__picture {
+  text-decoration: none;
+}
+.photo-grid__description {
+  display: flex;
+  justify-content: space-between;
+  width: 350px;
+  align-items: center;
+  color: #901C1C;
+}
+@media screen and (max-width: 640px) {
+  .photo-grid {
+    margin: 0;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.photo {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+.photo__name {
+  font-size: 1.5em;
+  font-weight: 400;
+}
+@media screen and (max-width: 640px) {
+  .photo__name {
+    font-size: 0.9em;
+  }
+}
+.photo__price {
+  font-size: 1.5em;
+}
+.photo__price i {
+  margin-left: 10px;
+}
+@media screen and (max-width: 640px) {
+  .photo__price {
+    font-size: 0.8em;
+  }
+}
+
+.video {
+  width: 350px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -5,4 +5,12 @@
     padding: 20px 10px;
     font-size: 1.1em;
     font-weight: 700;
+    &:hover {
+        background-color: #DB8876;
+        color: #000000;
+    }
+    &:focus {
+        background-color: #DB8876;
+        color: #000000;
+    }
 }
