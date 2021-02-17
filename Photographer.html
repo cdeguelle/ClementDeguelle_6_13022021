@@ -39,19 +39,7 @@
 
    <main>
         <div class="photographer-card">
-            <div class="photographer__infos">
-                <h1 class="photographer__name photographer__name--profile">Mimi Keel</h1>
-                <p class="photographer__city photographer__city--profile">London, UK</p>
-                <p class="photographer__description photographer__description--profile">Voir le beau dans le quotidien</p>
-                <ul class="photographer__tags photographer__tags--profile">
-                    <li class="tags__name tags__name--profile">#portrait</li>
-                    <li class="tags__name tags__name--profile">#events</li>
-                    <li class="tags__name tags__name--profile">#travel</li>
-                    <li class="tags__name tags__name--profile">#animals</li>
-                </ul>
-            </div>
-            <button class="contact">Contactez moi</button>
-            <img src="./public/img/Sample Photos/Mimi/Portrait_Nora.jpg" alt="Photo de profil" class="photographer__picture photographer__picture--profile">
+            
         </div>
         <div class="filter">
             <a class="filter-dropdown-link" aria-haspopup="true" aria-expanded="false" href="#">
@@ -89,9 +77,9 @@
 
         <section class="photo-grid">
             <a href="#" class="photo-grid__picture">
-                <img src="./public/img/Sample Photos/Mimi/Animals_Rainbow.jpg" alt="Oiseau coloré" class="photo">
+                <img src="./public/img/Sample Photos/Mimi/Animals_Rainbow.jpg" alt="Oiseau coloré" class="photo" id="photo-1">
                 <div class="photo-grid__description">
-                    <h2 class="photo__name">Arc en ciel</h2>
+                    <h2 class="photo__name" id="photo-name-1">Arc en ciel</h2>
                     <p class="photo__price">
                         70 €
                         <i class="fas fa-heart photo__like"></i>
@@ -99,9 +87,9 @@
                 </div>
             </a>
             <a href="#" class="photo-grid__picture">
-                <img src="./public/img/Sample Photos/Mimi/Travel_Lonesome.jpg" alt="Paysage montagneux" class="photo">
+                <img src="./public/img/Sample Photos/Mimi/Travel_Lonesome.jpg" alt="Paysage montagneux" class="photo" id="photo-2">
                 <div class="photo-grid__description">
-                    <h2 class="photo__name">Solitude</h2>
+                    <h2 class="photo__name" id="photo-name-2">Solitude</h2>
                     <p class="photo__price">
                         70 €
                         <i class="fas fa-heart photo__like"></i>
@@ -109,9 +97,9 @@
                 </div>
             </a>
             <a href="#" class="photo-grid__picture">
-                <img src="./public/img/Sample Photos/Mimi/Event_SeasideWedding.jpg" alt="Table de réception de marriage" class="photo">
+                <img src="./public/img/Sample Photos/Mimi/Event_SeasideWedding.jpg" alt="Table de réception de marriage" class="photo" id="photo-3">
                 <div class="photo-grid__description">
-                    <h2 class="photo__name">Marriage à la mer</h2>
+                    <h2 class="photo__name" id="photo-name-3">Marriage à la mer</h2>
                     <p class="photo__price">
                         70 €
                         <i class="fas fa-heart photo__like"></i>
@@ -119,9 +107,9 @@
                 </div>
             </a>
             <a href="#" class="photo-grid__picture">
-                <img src="./public/img/Sample Photos/Mimi/Portrait_Background.jpg" alt="Portrait noir et blanc" class="photo">
+                <img src="./public/img/Sample Photos/Mimi/Portrait_Background.jpg" alt="Portrait noir et blanc" class="photo" id="photo-4">
                 <div class="photo-grid__description">
-                    <h2 class="photo__name">Portrait noir et blanc</h2>
+                    <h2 class="photo__name" id="photo-name-4">Portrait noir et blanc</h2>
                     <p class="photo__price">
                         70 €
                         <i class="fas fa-heart photo__like"></i>
@@ -129,9 +117,9 @@
                 </div>
             </a>
             <a href="#" class="photo-grid__picture">
-                <img src="./public/img/Sample Photos/Mimi/Event_PintoWedding.jpg" alt="Photo de marriage" class="photo">
+                <img src="./public/img/Sample Photos/Mimi/Event_PintoWedding.jpg" alt="Photo de marriage" class="photo" id="photo-5">
                 <div class="photo-grid__description">
-                    <h2 class="photo__name">Marriage nature</h2>
+                    <h2 class="photo__name" id="photo-name-5">Marriage nature</h2>
                     <p class="photo__price">
                         70 €
                         <i class="fas fa-heart photo__like"></i>
@@ -139,9 +127,9 @@
                 </div>
             </a>
             <a href="#" class="photo-grid__picture">
-                <img src="./public/img/Sample Photos/Mimi/Portrait_Wednesday.jpg" alt="Enfant noir et blanc" class="photo">
+                <img src="./public/img/Sample Photos/Mimi/Portrait_Wednesday.jpg" alt="Enfant noir et blanc" class="photo" id="photo-6">
                 <div class="photo-grid__description">
-                    <h2 class="photo__name">Enfant noir et blanc</h2>
+                    <h2 class="photo__name" id="photo-name-6">Enfant noir et blanc</h2>
                     <p class="photo__price">
                         70 €
                         <i class="fas fa-heart photo__like"></i>
@@ -149,9 +137,9 @@
                 </div>
             </a>
             <a href="#" class="photo-grid__picture">
-                <img src="./public/img/Sample Photos/Mimi/Travel_HillsideColor.jpg" alt="Village coloré" class="photo">
+                <img src="./public/img/Sample Photos/Mimi/Travel_HillsideColor.jpg" alt="Village coloré" class="photo" id="photo-7">
                 <div class="photo-grid__description">
-                    <h2 class="photo__name">Village coloré</h2>
+                    <h2 class="photo__name" id="photo-name-7">Village coloré</h2>
                     <p class="photo__price">
                         70 €
                         <i class="fas fa-heart photo__like"></i>
@@ -159,8 +147,8 @@
                 </div>
             </a>
             <a href="#" class="photo-grid__picture">
-                <img src="./public/img/Sample Photos/Mimi/Event_BenevidesWedding.jpg" alt="Photo de marriage" class="photo">
-                <div class="photo-grid__description">
+                <img src="./public/img/Sample Photos/Mimi/Event_BenevidesWedding.jpg" alt="Photo de marriage" class="photo" id="photo-8">
+                <div class="photo-grid__description" id="photo-name-8">
                     <h2 class="photo__name">Marriage chic</h2>
                     <p class="photo__price">
                         70 €
@@ -171,7 +159,7 @@
             <a href="#" class="photo-grid__picture">
                 <video src="./public/img/Sample Photos/Mimi/Animals_Wild_Horses_in_the_mountains.mp4" alt="Chevaux sauvages en montagne" class="video"></video>
                 <div class="photo-grid__description">
-                    <h2 class="photo__name">Cheveaux sauvages</h2>
+                    <h2 class="photo__name video__name">Cheveaux sauvages</h2>
                     <p class="photo__price">
                         70 €
                         <i class="fas fa-heart photo__like"></i>
@@ -180,6 +168,6 @@
             </a>
         </section>
     </main>
-    <script src="./app.js"></script>
+    <script type="text/javascript" src="./photographer.js"></script>
 </body>
 </html>

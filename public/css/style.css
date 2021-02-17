@@ -12,6 +12,7 @@
   padding: 20px 10px;
   font-size: 1.1em;
   font-weight: 700;
+  width: 170px;
 }
 .contact:hover {
   background-color: #DB8876;
@@ -206,9 +207,6 @@ header {
 
 .photographer-card {
   margin: 50px 100px 0 100px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
   background-color: #FAFAFA;
   padding: 50px;
 }
@@ -222,6 +220,10 @@ header {
   }
 }
 
+.photographer__infos {
+  display: flex;
+  justify-content: space-between;
+}
 .photographer__name--profile {
   font-size: 4em;
 }
@@ -262,7 +264,7 @@ header {
 
 .contact {
   align-self: flex-start;
-  margin-top: 60px;
+  margin-top: 30px;
   margin-right: 340px;
 }
 @media screen and (max-width: 640px) {
