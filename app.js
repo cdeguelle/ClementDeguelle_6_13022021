@@ -14,7 +14,7 @@ function displayPhotographers (photographers) {
     for (let index = 0; index < photographers.length; index++) {
         photographersContainer.innerHTML += `
         <div class="photographer">
-            <a href="./photographer.html?photographerId=${photographers[index].id}" class="photographer__link" id="photographer-${photographers[index].id}">
+            <a href="./photographer.html?photographerID=${photographers[index].id}" class="photographer__link" id="photographer-${photographers[index].id}">
                 <img src="./public/img/Sample Photos/Photographers ID Photos/${photographers[index].portrait}" alt="${photographers[index].name}" class="photographer__picture">
                 <h2 class="photographer__name">${photographers[index].name}</h2>
             </a>

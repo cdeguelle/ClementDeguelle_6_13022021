@@ -18,25 +18,37 @@ dropdownLink.addEventListener('click', function(e) {
     toggleNavbar();
 })
 
-// Page dynamique
+// PAGE DYNAMIQUE \\
+// Lecture de photographerID dans l'URL
+var photographerID = parseInt(new URLSearchParams(window.location.search).get('photographerID'), 10);
+
+// Requête objet JSON
 var request = new XMLHttpRequest();
+
 request.onreadystatechange = function() {
     if (this.readyState == XMLHttpRequest.DONE && this.status == 200) {
         var response = JSON.parse(this.responseText);
         console.log(response);
-        var photographerId = parseInt(new URLSearchParams(window.location.search).get('photographerId'), 10)
-        console.log(photographerId);
         displayPhotographerInfo(response.photographers.find(photographer => {
-            return photographer.id === photographerId;
-        }))
-        displayPhotographerGrid(response.media);
+            return photographer.id === photographerID;
+        }));
+        displayPhotographerGrid(response.media.filter(filterById));
     }
 };
 request.open("GET", "data.json");
 request.send();
 
+// Récupération des photos/videos par id de photographe
+function filterById (media) {
+    if (media.photographerId === photographerID) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+// Remplissage dynamique des champs infos photographes
 function displayPhotographerInfo (photographer) {
-    console.log(photographer)
     let photographerCard = document.querySelector('.photographer-card');
     photographerCard.innerHTML += `
     <div class="photographer__infos">
@@ -51,24 +63,37 @@ function displayPhotographerInfo (photographer) {
     </div>`;
     var tagsContainerProfile = document.querySelector('.photographer__tags--profile');
     for (let i = 0; i < photographer.tags.length; i++) {
-        tagsContainerProfile.innerHTML += ` <li class="tags__name tags__name--profile">#${photographer.tags[i]}</li>`
+        tagsContainerProfile.innerHTML += `<li class="tags__name tags__name--profile">#${photographer.tags[i]}</li>`
     }
 }
 
-
-function displayPhotographerGrid (media)  {
+// Remplissage dynamique de la grille de photos
+function displayPhotographerGrid (photographerMedia)  {
     let photographerGrid = document.querySelector('.photo-grid');
-    for (let index = 0; index < media.length; index++) {
-        photographerGrid.innerHTML =+ `
-        <a href="#" class="photo-grid__picture">
-            <img src="./public/img/Sample Photos/Mimi/Animals_Rainbow.jpg" alt="Oiseau coloré" class="photo" id="photo-1">
+    for (let index = 0; index < photographerMedia.length; index++) {
+        photographerGrid.innerHTML += `
+        <div class="photo-grid__picture">
+            <a href="#" class="photo-grid__link">
+                <img src="./public/img/Sample Photos/${photographerMedia[index].name}/${photographerMedia[index].image}" alt="${photographerMedia[index].description}" class="photo">
+            </a>
             <div class="photo-grid__description">
-                <h2 class="photo__name" id="photo-name-1">Arc en ciel</h2>
+                <h2 class="photo__name">${photographerMedia[index].description}</h2>
                 <p class="photo__price">
-                    70 €
-                    <i class="fas fa-heart photo__like"></i>
+                    ${photographerMedia[index].price} €
+                </p>
+                <p class="photo__like">
+                    <span class="photo__like-count">${photographerMedia[index].likes}</span>
+                    <i class="fas fa-heart photo__like-icon"></i>
                 </p>
             </div>
-        </a>`;
+        </div>`;
+        var photoLikesCount = document.querySelector('.photo__like-count');
+        var likes = photoLikesCount.textContent;
+        document.querySelectorAll('.photo__like').forEach(elt => elt.addEventListener('click', function () {
+            likes ++;
+            photoLikesCount.innerHTML = likes;
+        }));
     }
 }
+
+
