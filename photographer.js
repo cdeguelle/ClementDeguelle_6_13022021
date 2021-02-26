@@ -74,7 +74,8 @@ function displayPhotographerGrid (photographerMedia)  {
         photographerGrid.innerHTML += `
         <div class="photo-grid__picture">
             <a href="#" class="photo-grid__link">
-                <img src="./public/img/Sample Photos/${photographerMedia[index].name}/${photographerMedia[index].image}" alt="${photographerMedia[index].description}" class="photo">
+                ${photographerMedia[index].hasOwnProperty('image') ? `<img src="./public/img/Sample Photos/${photographerMedia[index].name}/${photographerMedia[index].image}" alt="${photographerMedia[index].description}" class="photo">` : ''}
+                ${photographerMedia[index].hasOwnProperty('video') ? `<video controls><source src="./public/img/Sample Photos/${photographerMedia[index].name}/${photographerMedia[index].video}" alt="${photographerMedia[index].description}" class="photo" type="video/mp4"></video>` : ''}
             </a>
             <div class="photo-grid__description">
                 <h2 class="photo__name">${photographerMedia[index].description}</h2>
@@ -82,18 +83,70 @@ function displayPhotographerGrid (photographerMedia)  {
                     ${photographerMedia[index].price} €
                 </p>
                 <p class="photo__like">
-                    <span class="photo__like-count">${photographerMedia[index].likes}</span>
-                    <i class="fas fa-heart photo__like-icon"></i>
+                    <span class="photo__like-count" id="photo__like-count-${photographerMedia[index].id}">${photographerMedia[index].likes}</span>
+                    <i class="fas fa-heart photo__like-icon" id="photo__like-icon-${photographerMedia[index].id}" onclick="incrementPhotoLikesCount('photo__like-count-${photographerMedia[index].id}')"></i>
                 </p>
             </div>
         </div>`;
-        var photoLikesCount = document.querySelector('.photo__like-count');
-        var likes = photoLikesCount.textContent;
-        document.querySelectorAll('.photo__like').forEach(elt => elt.addEventListener('click', function () {
+        // Compteur de likes par photos
+        /*document.getElementById('photo__like-icon-' + photographerMedia[index].id).addEventListener('click', function(e) {
+            console.log('click')
+            var photoLikesCount = document.querySelector('#photo__like-count-' + photographerMedia[index].id);
+            var likes = parseInt(photoLikesCount.textContent, 10);
             likes ++;
             photoLikesCount.innerHTML = likes;
-        }));
+        })*/
     }
 }
+
+function incrementPhotoLikesCount (id) {
+    let elem = document.getElementById(id)
+    let likes = parseInt(elem.textContent, 10)
+    likes++
+    elem.innerHTML = likes
+}
+
+// Carousel 
+class Carousel {
+    /**
+     * @param {HTMLElement} element 
+     * @param {Object} options 
+     * @param {Object} options.slidesToScroll Nombre d'éléments à faire défiler
+     * @param {Object} options.slidesVisible Nombre d'éléments visible dans une slide
+     */
+    constructor (element, options = {}) {
+        this.element = element
+        this.options = Object.assign({}, {
+            slidesToScroll: 1,
+            slidesVisible: 1
+        }, options)
+        this.children = [].slice.call(element.children)
+        let root = this.createDivWithClass('carousel')
+        let container = this.createDivWithClass('carousel__container')
+        root.appendChild(container)
+        this.element.appendChild(root)
+        this.children.forEach((child) => {
+            let item = this.createDivWithClass('carousel__item')
+            item.appendChild(child)
+            container.appendChild(child)
+        })
+    }
+
+    createDivWithClass (className) {
+        let div = document.createElement('div')
+        div.setAttribute('class', className)
+        return div
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function () {
+
+
+    new Carousel(document.querySelector('.photo-grid'), {
+        slidesToScroll: 1,
+        slidesVisible: 1
+    })
+
+})
 
 
